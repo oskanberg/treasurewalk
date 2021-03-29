@@ -9,8 +9,8 @@ const puzzles = {
         question: ["Identify the food (Lottie will give it to you)"],
         answer: "jellyfish",
         location: {
-            lat: 50.998714,
-            lon: -0.634232
+            lat: 50.995056,
+            lon: -0.7710286
         }
     },
     "sin-vote-meal": {
@@ -132,7 +132,7 @@ class App extends Component {
         return (
             <Router>
                 <Page>
-                    <Route path="/" exact component={Detector} />
+                    <Route path="/" exact component={() => <Detector puzzles={puzzles}/>} />
                     <Route path="/p/:test" component={StyledPuzzle} />
                 </Page>
             </Router>
