@@ -32,8 +32,7 @@ const useGeolocation = () => {
 
     useEffect(
         () => {
-            navigator.geolocation.getCurrentPosition(onEvent);
-            watchId = navigator.geolocation.watchPosition(onEvent);
+            watchId = navigator.geolocation.watchPosition(onEvent, null, { enableHighAccuracy: true });
 
             return () => {
                 mounted = false;
