@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Amatic SC', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0f4411;
+  color: #ffee00;
+}
+
+p, input {
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+  color: #cca025;
+}
