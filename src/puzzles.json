@@ -20,7 +20,7 @@
     {
         "name": "pokfih3",
         "question": [
-            "In fourth year, Molly Weasley send Ron and Harry dragon-sized Easter Eggs.",
+            "In fourth year, Molly Weasley sent Ron and Harry dragon-sized Easter Eggs.",
             "What were they filled with?"
         ],
         "answer": [
@@ -43,8 +43,8 @@
         ],
         "hint": "What are different ways you can prepare eggs?",
         "location": {
-            "lat": 50.971547,
-            "lon": -0.83796
+            "lat": 50.97549,
+            "lon": -0.83788
         }
     },
     {

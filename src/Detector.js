@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import bunny from './bunny.png';
+import egg from './egg.png';
 import puzzles from './puzzles.json';
 
 const useGeolocation = () => {
@@ -86,7 +86,7 @@ const Detector = () => {
                     (<>
                         <Link to={`/p/${puzzles[selectedPuzzle].name}`}>
                             <p>You found it! Answer a question for the next location!</p>
-                            <img src={bunny} alt="a bunny" />
+                            <img src={egg} alt="a egg" />
                         </Link>
                     </>) :
                     (<p>{Math.ceil(distance)}(±{Math.ceil(pos.accuracy)})m away.</p>)

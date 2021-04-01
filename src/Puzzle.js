@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import { withWobble } from "react-motions";
-import egg from './egg.png';
+import bunny from './bunny.png';
 
 import puzzles from './puzzles.json';
+import Confetti from 'react-confetti';
 
 const Puzzle = ({ match, className }) => {
     let [guess, setGuess] = useState("");
@@ -39,8 +40,9 @@ const Puzzle = ({ match, className }) => {
     let c = (correct ?
         (
             <div className={className}>
+                <Confetti/>
                 <h1>yay!</h1>
-                <img src={egg} alt="an egg" />
+                <img src={bunny} alt="an bunny" />
                 <p>here's something to ponder on the way to the next spot:</p>
                 <p>{p.hint}</p>
                 <a href={url} target="_blank" rel="noopener noreferrer">next location</a>
