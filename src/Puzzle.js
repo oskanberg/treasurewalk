@@ -11,7 +11,7 @@ const Puzzle = ({ match, className }) => {
     let [correct, setCorrect] = useState(false);
 
     let selectedIdx = puzzles.findIndex(puz => puz.name === match.params.test);
-    if (selectedIds === -1) {
+    if (selectedIdx === -1) {
         return <p>sorry that's not a puzzle</p>;
     }
 
@@ -20,6 +20,8 @@ const Puzzle = ({ match, className }) => {
         let l = puzzles[selectedIdx + 1].location;
         url = `https://maps.google.com/maps?&z=15&mrt=yp&t=k&q=${l.lat},${l.lon}`;
     }
+
+    let p = puzzles[selectedIdx];
 
     const checkGuess = e => {
         e.preventDefault();
