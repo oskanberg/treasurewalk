@@ -1,5 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import bunny from './bunny.png';
+import puzzles from './puzzles.json';
 
 const useGeolocation = () => {
     const [state, setState] = useState({
@@ -58,22 +62,36 @@ const measure = (lat1, lon1, lat2, lon2) => {
     return d * 1000; // meters
 };
 
-const Detector = ({ puzzles }) => {
-    const state = useGeolocation();
+const StyledButtons = styled.nav`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    a { font-size: 4rem; }
+    cursor: pointer;
+`;
 
-    // manhattan
-    let distances = [];
-    for (const t in puzzles) {
-        distances.push(
-            measure(puzzles[t].location.lat,puzzles[t].location.lon, state.latitude, state.longitude)
-        );
-    }
+const Detector = () => {
+    const pos = useGeolocation();
+    const [selectedPuzzle, setSelectedPuzzle] = useState(0);
+    const buttons = puzzles.map((_, i) => <a style={{ color: i === selectedPuzzle ? 'rgb(255, 24, 251)' : 'blueviolet' }} key={i} onClick={() => setSelectedPuzzle(i)}>{i}</a>);
+
+    let distance = measure(puzzles[selectedPuzzle].location.lat, puzzles[selectedPuzzle].location.lon, pos.latitude, pos.longitude);
 
     return (
-        <pre>
-            {JSON.stringify(state, null, 2)}
-            {JSON.stringify(distances)}
-        </pre>
+        <div>
+            <StyledButtons>{buttons}</StyledButtons>
+            {
+                distance - pos.accuracy < 10 ?
+                    (<>
+                        <Link to={`/p/${puzzles[selectedPuzzle].name}`}>
+                            <p>You found it! Answer a question for the next location!</p>
+                            <img src={bunny} />
+                        </Link>
+                    </>) :
+                    (<p>{distance.toFixed(1)}(±{pos.accuracy})m away.</p>)
+            }
+        </div>
     );
 };
 

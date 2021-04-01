@@ -8,12 +8,16 @@ body {
   font-family: 'Amatic SC', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0f4411;
-  color: #ffee00;
+  background: #a2d456;
+  color: white;
 }
 
-p, input {
+a, p, input {
   font-family: 'Amatic SC', cursive;
-  font-size: 20px;
-  color: #cca025;
+  font-size: 25px;
+  color: white;
+}
+
+img {
+  max-width: 100%;
 }
