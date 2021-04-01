@@ -43,8 +43,8 @@
         ],
         "hint": "What are different ways you can prepare eggs?",
         "location": {
-            "lat": 50.971504,
-            "lon": -0.839087
+            "lat": 50.971547,
+            "lon": -0.83796
         }
     },
     {
@@ -57,8 +57,8 @@
         ],
         "hint": "In ancient Arabic منى (Mona, 'provision of the mouth') was a land tax paid in food. What would you ask for if you were collecting?",
         "location": {
-            "lat": 50.971504,
-            "lon": -0.839087
+            "lat": 50.97872,
+            "lon": -0.83640
         }
     },
     {
@@ -72,8 +72,8 @@
         ],
         "hint": "How many classic UK chocolate bars can you name?",
         "location": {
-            "lat": 50.971504,
-            "lon": -0.839087
+            "lat": 50.97771,
+            "lon": -0.84289
         }
     },
     {
@@ -84,10 +84,10 @@
         "answer": [
             "bounty"
         ],
-        "hint": "q4 hint",
+        "hint": "You did it!!",
         "location": {
-            "lat": 50.971504,
-            "lon": -0.839087
+            "lat": 50.97172,
+            "lon": -0.83891
         }
     }
 ]
