@@ -89,7 +89,7 @@ const Detector = () => {
                             <img src={bunny} alt="a bunny" />
                         </Link>
                     </>) :
-                    (<p>{Math.ceil(distance)}(±{Math.ceil(pos)})m away.</p>)
+                    (<p>{Math.ceil(distance)}(±{Math.ceil(pos.accuracy)})m away.</p>)
             }
         </div>
     );
