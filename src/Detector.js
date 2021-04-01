@@ -74,7 +74,7 @@ const StyledButtons = styled.nav`
 const Detector = () => {
     const pos = useGeolocation();
     const [selectedPuzzle, setSelectedPuzzle] = useState(0);
-    const buttons = puzzles.map((_, i) => <a style={{ color: i === selectedPuzzle ? 'rgb(255, 24, 251)' : 'blueviolet' }} key={i} onClick={() => setSelectedPuzzle(i)}>{i}</a>);
+    const buttons = puzzles.map((_, i) => <a href={`#${i}`} style={{ color: i === selectedPuzzle ? 'rgb(255, 24, 251)' : 'blueviolet' }} key={i} onClick={() => setSelectedPuzzle(i)}>{i}</a>);
 
     let distance = measure(puzzles[selectedPuzzle].location.lat, puzzles[selectedPuzzle].location.lon, pos.latitude, pos.longitude);
 
@@ -86,7 +86,7 @@ const Detector = () => {
                     (<>
                         <Link to={`/p/${puzzles[selectedPuzzle].name}`}>
                             <p>You found it! Answer a question for the next location!</p>
-                            <img src={bunny} />
+                            <img src={bunny} alt="a bunny" />
                         </Link>
                     </>) :
                     (<p>{distance.toFixed(1)}(±{pos.accuracy})m away.</p>)

@@ -40,7 +40,7 @@ const Puzzle = ({ match, className }) => {
         (
             <div className={className}>
                 <h1>yay!</h1>
-                <img src={egg} />
+                <img src={egg} alt="an egg" />
                 <p>here's something to ponder on the way to the next spot:</p>
                 <p>{p.hint}</p>
                 <a href={url} target="_blank" rel="noopener noreferrer">next location</a>
